@@ -1,9 +1,9 @@
 # Javascript
-- [Javascript](#javascript)
-  * [Arrays](#arrays)
-    + [Push and pop](#push-and-pop)
-    + [For each](#for-each)
-    + [Slice](#slice)
+- [Arrays](#arrays)
+	* [Push and pop](#push-and-pop)
+	* [For each](#for-each)
+	* [Slice](#slice)
+	* [Map](#map)
 ## Arrays
 Arrays are sequences of values that have a specific order and a length.
 
@@ -140,3 +140,11 @@ return arr.slice(1, 400); /* [2, 3, 4, 5] */
 ```
 
 If no arguments are given, `slice` returns a copy of the array.
+
+### Map
+Use `map` to call a function on each element in an array and return a new array with the values returned from those function calls. The original may is not changed by `map`.
+
+```js
+const arr = [1, 2, 3];
+return arr.map(x => x * 10) /* [10, 20, 30] */
+```
