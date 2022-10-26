@@ -4,6 +4,8 @@
 	* [For each](#for-each)
 	* [Slice](#slice)
 	* [Map](#map)
+	* [Join](#join)
+
 ## Arrays
 Arrays are sequences of values that have a specific order and a length.
 
@@ -148,3 +150,32 @@ Use `map` to call a function on each element in an array and return a new array 
 const arr = [1, 2, 3];
 return arr.map(x => x * 10) /* [10, 20, 30] */
 ```
+
+### Join
+`join` combines elements in an array together into a string.
+```js
+const arr = ['a', 'b', 'c'];
+return arr.join('') /* 'abc' */
+```
+
+If no argument is given to `join`, the strings are joined by `,` by default.
+
+```js
+const arr = ['a', 'b', 'c'];
+return arr.join() /* 'a,b,c' */
+```
+
+The argument can be any string.
+
+```js
+const arr = ['a', 'b', 'c'];
+return arr.join('x') /* 'axbxc' */
+```
+
+`null` and `undefined` become empty strings when joined.
+
+```js
+const arr = [null, 'b', undefined];
+return arr.join() /* ' ,b, ' */
+```
+
