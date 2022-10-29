@@ -5,7 +5,12 @@
 	* [Slice](#slice)
 	* [Map](#map)
 	* [Join](#join)
+- [Testing](#testing)
+	* [Equals](#equals)
+	* [Not equals](#not-equals)
+	* [Grouping tests](#grouping-tests)
 
+---
 ## Arrays
 Arrays are sequences of values that have a specific order and a length.
 
@@ -178,4 +183,88 @@ return arr.join('x') /* 'axbxc' */
 const arr = [null, 'b', undefined];
 return arr.join() /* ' ,b, ' */
 ```
+---
+## Testing
+Testing in software development is the process of finding out whether the code does what it is supposed to do.
 
+Testing can be done manually with `console.log()`. Alternatively, it can be automated.
+
+#### Equals
+One way to automate this is to write an equals function.
+
+```js
+function equal(actual, expected) {
+	if (actual === expected) {    
+		console.info(`Pass: Expected ${expected} and received ${actual}`);  
+	} else {
+	    console.error(`Fail: Expected ${expected} but received ${actual} instead`);  
+	}
+}
+
+const result1 = square(2);
+const expected1 = 4;
+equal(result1, expected1); // `"Pass: Expected 4 and received 4`.
+const result2 = square(3.5);
+const expected2 = 9999; // `Fail: Expected 9999 but received 12.25 instead"`.
+```
+
+### Not equals
+A not-equals function can also be helpful in testing.
+
+```js
+function notEqual(actual, expected) {
+	if (actual !== expected) {
+	    console.info(`Pass: ${expected} is different to ${actual}`);  
+	} else {
+	    console.error(`Fail: ${expected} is the same as ${actual}`);  
+	}
+}
+const result3 = square(3);
+const expected3 = 10;
+notEqual(result3, expected3); // `"Pass: 10 is different to 3"`
+```
+
+### Grouping tests
+Group tests together with a separate test function.  
+
+```js
+function test(name, testFunction) {
+	console.group(name); // creates a new group name. All console messages below this line below to this group now
+	testFunction();
+	console.groupEnd(); // closes the group
+}
+
+test("Correctly squares integers", () => {
+	const result = square(2);  
+	const expected = 4;  
+	equal(result, expected);
+	}); // `"Pass: Expected 4 and received 4`
+
+test("Correctly squares decimals", () => {  
+	const result = square(3.5);
+	const expected = 12.25;
+	equal(result, expected);
+	}); // "Pass: Expected 12.25 and received 12.25"
+```
+
+### Custom messages
+Make the testing functions simpler to understand by adding an option for a custom message.
+
+```js
+function equal(actual, expected, message) {
+	if (actual === expected) {    
+		const defaultMessage = `Expected ${expected} and received ${actual}`;
+		console.info("Pass: " + (message || defaultMessage));
+	} else {
+	    const defaultMessage = `Expected ${expected} but received ${actual} instead`;
+	    console.error("Fail: " + (message || defaultMessage));  
+	}
+}
+
+test("Correctly squares integers", () => {
+	const result = square(2);  
+	const expected = 4;
+	equal(result, expected, "square(2) should return 4");
+	}
+); // "Pass: square(2) should return 4"
+```
