@@ -9,6 +9,11 @@
 	* [Equals](#equals)
 	* [Not equals](#not-equals)
 	* [Grouping tests](#grouping-tests)
+	* [Making code easier to test](#making-code-easier-to-test)
+	* [Deep equality](#deep-equality)
+- [URLSearchParams](#urlsearchparams)
+	* [Constructing a new URLSearchParams object](#constructing-a-new-urlsearchparams-object)
+
 
 ---
 ## Arrays
@@ -268,3 +273,47 @@ test("Correctly squares integers", () => {
 	}
 ); // "Pass: square(2) should return 4"
 ```
+### Making code easier to test
+Make code easier to test by:
+- Writing functions that only have a single responsibility. 
+- Use pure functions (that is, functions that return the same output when given the same input)
+
+### Deep equality
+Be careful when testing objects or arrays. Objects that look the same do not necessarily equal each other.
+
+```js
+const x = { name: "oliver" };
+const y = { name: "oliver" };
+console.log(x === y); // false
+```
+
+One workaround is to test the specific properties inside the objects.
+
+```js
+console.log(x.name === y.name); // Logs: true
+```
+---
+## URLSearchParams
+`URLSearchParams` is an API that makes working with URL strings easier. 
+
+### Constructing a new URLSearchParams object
+Construct a new URLSearchParams object with `new URLSearchParams()`. It takes a single argument. (If no argument is given, an empty instance is created, which may be helpful in certain situations.)
+
+The argument can be the URL query string itself.
+
+```js
+const queryString = "name=Michelle&age=29&job=Football+Coach" // raw URL string to be manipulated
+const params = new URLSearchParams()
+```
+
+Or it can be an object.
+
+```js
+const params = new URLSearchParams({name= "Michelle", age = 29, job = "Football Coach"})
+```
+
+URLSearchParams have access to lots of different methods, including:
+
+- `get`.
+- `set`.
+- `toString`.
