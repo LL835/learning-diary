@@ -303,7 +303,7 @@ The argument can be the URL query string itself.
 
 ```js
 const queryString = "name=Michelle&age=29&job=Football+Coach" // raw URL string to be manipulated
-const params = new URLSearchParams()
+const params = new URLSearchParams(queryString)
 ```
 
 Or it can be an object.
