@@ -5,6 +5,10 @@
 	* [Slice](#slice)
 	* [Map](#map)
 	* [Join](#join)
+	* [Concat](#concat)
+	* [Includes](#includes)
+	* [IndexOf](#indexof)
+
 - [Testing](#testing)
 	* [Equals](#equals)
 	* [Not equals](#not-equals)
@@ -188,6 +192,68 @@ return arr.join('x') /* 'axbxc' */
 const arr = [null, 'b', undefined];
 return arr.join() /* ' ,b, ' */
 ```
+### Concat
+Combine arrays together with `concat`.
+
+```js
+return [1, 2].concat([3, 4]) /* [1, 2, 3, 4] */
+```
+
+Multiple arguments can be given.
+
+```js
+return [1, 2].concat([3, 4], [5, 6]) /* [1, 2, 3, 4, 5, 6] */
+```
+
+It can also be used to add a single element to the end of an array.
+
+```js
+return [1, 2].concat(3) /* [1, 2, 3] */
+```
+
+The original arrays are not changed by `concat`.
+
+```js
+const arr1 = [1, 2];
+const arr2 = [3, 4];
+arr1.concat(arr2);
+return arr1 /* [1, 2] */
+```
+### Includes
+Check if an array includes a particular element with `includes`.
+
+```js
+return [1, 2].includes('c') /* false */
+```
+
+```js
+return [1, 2].includes(2) /* true */
+```
+
+### IndexOf
+Check which index an element is in an array with `indexOf`.
+
+```js
+const arr = [1, 2, 3];
+return arr.indexOf(2) /* 1 */
+```
+
+If the value occurs multiple times in the array, `indexOf` returns the index of the element the first time it appears.
+
+```js
+const arr = [1, 2, 3, 2, 4];
+return arr.indexOf(2) /* 1 */
+```
+
+If the element isn't in the array, `indexOf` returns -1.
+
+```js
+const arr = [1, 2, 3];
+return arr.indexOf('x') /* -1 */
+```
+
+
+
 ---
 ## Testing
 Testing in software development is the process of finding out whether the code does what it is supposed to do.
