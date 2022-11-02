@@ -8,6 +8,8 @@
 	* [Concat](#concat)
 	* [Includes](#includes)
 	* [IndexOf](#indexof)
+	* [New and fill](#new-and-fill)
+
 
 - [Testing](#testing)
 	* [Equals](#equals)
@@ -251,9 +253,20 @@ If the element isn't in the array, `indexOf` returns -1.
 const arr = [1, 2, 3];
 return arr.indexOf('x') /* -1 */
 ```
+### New and fill
 
+The `fill` method fills an array with the given value, replacing any existing values.
 
+```js
+const arr = [1, 2, 3];
+return arr.fill(3); /* [3, 3, 3] */
+```
 
+The `new` method can create a new array. Then `fill` can be used to populate the new array.
+
+```js
+return new Array(4).fill('a') /* ['a', 'a', 'a', 'a'] */
+```
 ---
 ## Testing
 Testing in software development is the process of finding out whether the code does what it is supposed to do.
