@@ -1,4 +1,7 @@
 # learning-diary
+## 2.11.2022
+Added notes on the **[fill](https://github.com/LL835/learning-diary/tree/main/javascript#new-and-fill)** method for arrays.
+
 ## 31.10.2022
 Added notes on **[concat](https://github.com/LL835/learning-diary/tree/main/javascript#concat)**, **[includes](https://github.com/LL835/learning-diary/tree/main/javascript#includes)**, and **[indexOf](https://github.com/LL835/learning-diary/tree/main/javascript#indexOf)** to javascript.
 ## 30.10.2022
