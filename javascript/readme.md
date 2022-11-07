@@ -9,8 +9,9 @@
 	* [Includes](#includes)
 	* [IndexOf](#indexof)
 	* [New and fill](#new-and-fill)
-
-
+	
+- [Regular Expressions](#regular-expressions)
+	* [Wildcard operator](#wildcard-operator)
 - [Testing](#testing)
 	* [Equals](#equals)
 	* [Not equals](#not-equals)
@@ -396,3 +397,56 @@ URLSearchParams have access to lots of different methods, including:
 - `get`.
 - `set`.
 - `toString`.
+
+## Regular Expressions
+Regular expressions (regexes) are patterns that describe strings.
+
+Test whether a string contains a particular pattern with `//.test`.
+For example: 
+
+```js
+/a/.test('cat'); // true
+```
+Regexes are case sensitive.
+
+```js
+/a/.test('CAT'); // false
+```
+
+Multi-character regexes can test whether characters are adjacent to each other
+
+```js
+/do/.test('dog'); // true
+```
+
+```js
+/dg/.test('dog'); // false
+```
+Spaces count as regular characters
+
+```js
+/a dog/.test('is there a dog'); // true
+```
+
+## Wildcard operator
+Regexes can match literal characters. They can also match to various operators. The wildcard operator, `.` is one example. `.` matches any character (as long as it isn't a empty string).
+
+```js
+/./.test('a'); // true
+```
+
+```js
+/./.test('v'); // true
+```
+`.` also doesn't recognise new lines `\n`.
+
+```js
+/./.test('\n'); true
+```
+
+Putting `.` next to a character means that a character is adjacent to another character.
+
+```js
+/a.c/.test('abc'); //true
+```
+
