@@ -1,4 +1,7 @@
 # learning-diary
+## 7.11.2022
+Added notes on **[regex](https://github.com/LL835/learning-diary/tree/main/javascript#regular-expressions)**.
+
 ## 2.11.2022
 Added notes on the **[fill](https://github.com/LL835/learning-diary/tree/main/javascript#new-and-fill)** method for arrays.
 
