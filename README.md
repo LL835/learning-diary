@@ -1,4 +1,9 @@
 # learning-diary
+## 14.11.2022
+Updated notes on **[regex](https://github.com/LL835/learning-diary/tree/main/javascript#regular-expressions)**. Added following sections:
+- **[Boundaries](https://github.com/LL835/learning-diary/tree/main/javascript#boundaries)**.
+- **[Or](https://github.com/LL835/learning-diary/tree/main/javascript#or)**.
+- **[Repetition](https://github.com/LL835/learning-diary/tree/main/javascript#repetition)**.
 ## 7.11.2022
 Added notes on **[regex](https://github.com/LL835/learning-diary/tree/main/javascript#regular-expressions)**.
 
