@@ -24,13 +24,9 @@
 	* [Or](#or)
 	* [Repetition](#repetition)
 ---
-<details>
-
-<summary>
 
 ## Arrays
 
-</summary>
 Arrays are sequences of values that have a specific order and a length.
 
 ```js
@@ -275,15 +271,11 @@ The `new` method can create a new array. Then `fill` can be used to populate the
 ```js
 return new Array(4).fill('a') /* ['a', 'a', 'a', 'a'] */
 ```
-</details>
 
 ---
-<details>
-<summary>
 
 ## Testing
 
-</summary>
 Testing in software development is the process of finding out whether the code does what it is supposed to do.
 
 Testing can be done manually with `console.log()`. Alternatively, it can be automated.
@@ -387,16 +379,9 @@ One workaround is to test the specific properties inside the objects.
 console.log(x.name === y.name); // Logs: true
 ```
 
-</details>
-
 ---
 
-<details>
-<summary>
-
 ## URLSearchParams
-
-</summary>
 
 `URLSearchParams` is an API that makes working with URL strings easier. 
 
@@ -422,16 +407,10 @@ URLSearchParams have access to lots of different methods, including:
 - `set`.
 - `toString`.
 
-</details>
-
 ---
-
-<details>
-<summary>
 
 ## Regular Expressions
 
-</summary>
 Regular expressions (regexes) are patterns that describe strings.
 
 Test whether a string contains a particular pattern with `//.test`.
@@ -533,5 +512,3 @@ Multiple + and *s can be used in the same regex
 /a+b*c+/.test('aa'); // false
 /a+b*c+/.test('bc'); // false
 ```
-
-</details>
