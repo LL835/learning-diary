@@ -9,9 +9,6 @@
 	* [Includes](#includes)
 	* [IndexOf](#indexof)
 	* [New and fill](#new-and-fill)
-	
-- [Regular Expressions](#regular-expressions)
-	* [Wildcard operator](#wildcard-operator)
 - [Testing](#testing)
 	* [Equals](#equals)
 	* [Not equals](#not-equals)
@@ -21,7 +18,11 @@
 - [URLSearchParams](#urlsearchparams)
 	* [Constructing a new URLSearchParams object](#constructing-a-new-urlsearchparams-object)
 
-
+- [Regular Expressions](#regular-expressions)
+	* [Wildcard operator](#wildcard-operator)
+	* [Boundaries](#boundaries)
+	* [Or](#or)
+	* [Repetition](#repetition)
 ---
 ## Arrays
 Arrays are sequences of values that have a specific order and a length.
@@ -449,4 +450,54 @@ Putting `.` next to a character means that a character is adjacent to another ch
 ```js
 /a.c/.test('abc'); //true
 ```
+### Boundaries
+Use boundaries to check text at the beginning and end of strings. Use `^` to check for the start of a string.
+```js
+/^cat/.test('cat'); // true
+```
+```js
+/^cat/.test('I like cats'); // false
+```
+Use `$` to check the end of a string.
+```js
+/cat$/.test('a dog'); // false
+```
+```js
+/cat$/.test('a cat'); // true
+```
+Most regexes check for the start and end of a string.
+```js
+/^a$/.test('the letter a'); // false
+```
+```js
+/^a$/.test('a'); true
+```
+### Or
+Allow for alternatives with `|`
+```js
+/a|b/.test('a'); // true
+/a|b/.test('b'); // true
+/a|b/.test('c'); // false
 
+```
+### Repetition
+The `+` operator requires something to occur one or more times.
+```js
+/a+/.test('aaa'); // true
+/a+/.test('a'); // true
+/ca+t/.test('caaat'); // true
+/a.+z/.test('aveloz'); // true
+/a.+z/.test('az'); // false
+```
+The `*` operator is similar `to` +, but means zero or more times.
+```js
+/a*/.test('a'); // true
+/a*/.test(''); // true
+/a.*z/.test('aveloz'); // true
+```
+Multiple + and *s can be used in the same regex
+```js
+/a+b*c+/.test('aacc'); // true
+/a+b*c+/.test('aa'); // false
+/a+b*c+/.test('bc'); // false
+```
