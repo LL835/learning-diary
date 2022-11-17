@@ -1,4 +1,6 @@
 # learning-diary
+## 17.11.2022
+Added notes on the **[flat and flatMap](https://github.com/LL835/learning-diary/tree/main/javascript#flat-and-flatmap)** method.
 ## 14.11.2022
 Updated notes on **[regex](https://github.com/LL835/learning-diary/tree/main/javascript#regular-expressions)**. Added following sections:
 - **[Boundaries](https://github.com/LL835/learning-diary/tree/main/javascript#boundaries)**.
