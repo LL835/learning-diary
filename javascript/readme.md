@@ -9,6 +9,7 @@
 	* [Includes](#includes)
 	* [IndexOf](#indexof)
 	* [New and fill](#new-and-fill)
+	* [flat and flatMap](#flat-and-flatmap)
 - [Testing](#testing)
 	* [Equals](#equals)
 	* [Not equals](#not-equals)
@@ -270,6 +271,44 @@ The `new` method can create a new array. Then `fill` can be used to populate the
 
 ```js
 return new Array(4).fill('a') /* ['a', 'a', 'a', 'a'] */
+```
+
+### flat and flatMap
+`flat` flattens any arrays nested in another array.
+
+```js
+return [
+  [1, 2],
+  [3, 4]
+].flat(); // [1, 2, 3, 4]
+```
+
+`flat` only flattens one level of an array by default, but it's possible flatten past the first level by giving `flat` an argument.
+
+```js
+return [ 
+[1, 2], 
+[ 3, [4]] 
+].flat(2); // [1, 2, 3, 4] 
+```
+
+The argument can be `Infinity` which flattens all nested arrays.
+
+
+```js
+return [[[[[[[[[[[[[[1]]]]]]]]]]]]]].flat(Infinity); // [1]
+```
+`flat` is often combined with `map`. This can be done separately or done via `flatMap` which is the same as calling `map` on an array followed by `flat`.
+
+```js
+return [
+  {numbers: [1, 2]},
+  {numbers: [3, 4]},
+].flatMap(obj => obj.numbers); // [1, 2, 3, 4]
+
+/* 
+flatMap first creates a new array [[1, 2], [3, 4] and then immediately flattens it]
+*/
 ```
 
 ---
